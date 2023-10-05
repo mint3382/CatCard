@@ -33,10 +33,14 @@ final class CharacterLabel: UILabel {
     // MARK: - Configure View
     
     private func configureStyle() {
-        
+        font = .systemFont(ofSize: 16, weight: .bold)
+        backgroundColor = .systemPurple.withAlphaComponent(0.8)
     }
     
     private func configureRoundedCorner() {
-        
+        clipsToBounds = true
+        layer.cornerRadius = bounds.height / 2
+        layer.borderWidth = 3
+        layer.borderColor = UIColor.systemPurple.cgColor
     }
 }

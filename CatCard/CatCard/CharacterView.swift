@@ -17,18 +17,16 @@ final class CharacterView: UIView {
         return view
     }()
     
-    private let turnStateLabel: UILabel = {
-        let label = UILabel()
+    private let turnStateLabel: CharacterLabel = {
+        let label = CharacterLabel()
         label.text = "Turn"
-        label.font = .systemFont(ofSize: 16, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    private let characterNameLabel: UILabel = {
-        let label = UILabel()
+    private let characterNameLabel: CharacterLabel = {
+        let label = CharacterLabel()
         label.text = "빡빡이"
-        label.font = .systemFont(ofSize: 16, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

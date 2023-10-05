@@ -11,16 +11,19 @@ final class CardPickerView: UIView {
     
     private let firstActionButton: CardActionButton = {
         let button = CardActionButton()
+        button.setTitle("FIRST", for: .normal)
         return button
     }()
     
     private let secondActionButton: CardActionButton = {
         let button = CardActionButton()
+        button.setTitle("SECOND", for: .normal)
         return button
     }()
     
     private let thirdActionButton: CardActionButton = {
         let button = CardActionButton()
+        button.setTitle("THIRD", for: .normal)
         return button
     }()
     

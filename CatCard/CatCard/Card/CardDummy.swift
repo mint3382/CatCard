@@ -8,15 +8,13 @@
 import Foundation
 
 final class CardDummy {
-    var catDummy: [CatSpecies: Int] = [.cat: 16, .tiger: 2]
-    var resourceDummy: [ResourceType: Int] = [.love: 70, .food: 50, .toy: 40, .time: 30, .money: 10]
+    var catDummy: [CatSpecies: Int]
+    var resourceDummy: [ResourceType: Int]
     
-//    //랜덤 카드 여러장 뽑기
-//    func pickRandomResources(count: Int) {
-//        for _ in 1...count {
-//            pickOneRandomResource()
-//        }
-//    }
+    init(catDummy: [CatSpecies : Int] = [.cat: 16, .tiger: 2], resourceDummy: [ResourceType : Int]  = [.love: 70, .food: 50, .toy: 40, .time: 30, .money: 10]) {
+        self.catDummy = catDummy
+        self.resourceDummy = resourceDummy
+    }
     
     //랜덤한 카드 1장 뽑기
     func pickOneRandomResource() -> ResourceType {

@@ -17,6 +17,7 @@
 		FF339B542ACECE9500642F2E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF339B532ACECE9500642F2E /* CardView.swift */; };
 		FF339B562ACED61F00642F2E /* CardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF339B552ACED61F00642F2E /* CardItem.swift */; };
 		FF339B582ACEE22800642F2E /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF339B572ACEE22800642F2E /* CharacterView.swift */; };
+		FF339B5C2ACEFA3000642F2E /* CharacterImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF339B5B2ACEFA3000642F2E /* CharacterImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		FF339B532ACECE9500642F2E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		FF339B552ACED61F00642F2E /* CardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardItem.swift; sourceTree = "<group>"; };
 		FF339B572ACEE22800642F2E /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
+		FF339B5B2ACEFA3000642F2E /* CharacterImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				FF339B532ACECE9500642F2E /* CardView.swift */,
 				FF339B552ACED61F00642F2E /* CardItem.swift */,
 				FF339B572ACEE22800642F2E /* CharacterView.swift */,
+				FF339B5B2ACEFA3000642F2E /* CharacterImageView.swift */,
 				921137D92ACEB39700B31DCE /* ViewController.swift */,
 				921137DB2ACEB39700B31DCE /* Main.storyboard */,
 				921137DE2ACEB39800B31DCE /* Assets.xcassets */,
@@ -156,6 +159,7 @@
 				921137D62ACEB39700B31DCE /* AppDelegate.swift in Sources */,
 				921137D82ACEB39700B31DCE /* SceneDelegate.swift in Sources */,
 				FF339B542ACECE9500642F2E /* CardView.swift in Sources */,
+				FF339B5C2ACEFA3000642F2E /* CharacterImageView.swift in Sources */,
 				FF339B582ACEE22800642F2E /* CharacterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

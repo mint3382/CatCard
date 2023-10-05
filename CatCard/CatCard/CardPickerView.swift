@@ -9,7 +9,7 @@ import UIKit
 
 final class CardPickerView: UIView {
     
-    private var onCardItems: (([CardItem]) -> Void)?
+    var onCardItems: (([CardItem]) -> Void)?
     
     private let firstActionButton: CardActionButton = {
         let button = CardActionButton()

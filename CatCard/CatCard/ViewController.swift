@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     
     // MARK: - Dependencies
     
-    private let viewModel: CardPickerViewModelProtocol!
+    private var viewModel: CardPickerViewModelProtocol!
     
     // MARK: - Initialization
     
@@ -40,6 +40,7 @@ class ViewController: UIViewController {
 extension ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupBindings()
         setupLayout()
     }
 }

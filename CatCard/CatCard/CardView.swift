@@ -21,28 +21,9 @@ final class CardView: UIView {
     
     private let iconImageView: UIImageView = {
         let view = UIImageView()
-        view.image = UIImage(systemName: "cloud.fill")
-        view.image?.withRenderingMode(.alwaysOriginal)
+        view.image = UIImage(systemName: "cluod.fill")
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
-    }()
-    
-    private let numberLabel: UILabel = {
-        let label = UILabel()
-        label.text = "7"
-        label.textAlignment = .center
-        label.font = .systemFont(ofSize: 40, weight: .bold)
-        label.adjustsFontForContentSizeCategory = true
-        return label
-    }()
-    
-    private lazy var contentStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [iconImageView,
-                                                  numberLabel])
-        stack.axis = .vertical
-        stack.alignment = .fill
-        stack.distribution = .fill
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        return stack
     }()
     
     // MARK: - Initialization
@@ -63,21 +44,24 @@ final class CardView: UIView {
     
     convenience init(item: CardItem) {
         self.init(frame: .zero)
-        iconImageView.image = UIImage(named: item.imageString)
-        iconImageView.tintColor = item.color
-        numberLabel.textColor = item.color
-        layer.borderColor = item.color.cgColor
-        backgroundColor = item.color.withAlphaComponent(0.5)
+        guard let named = item.imageString else {
+            iconImageView.image = UIImage(systemName: "cloud.fill")?
+                .withTintColor(item.borderColor, renderingMode: .alwaysOriginal)
+            return
+        }
+        iconImageView.image = UIImage(named: named)
+        layer.borderColor = item.borderColor.cgColor
+        backgroundColor = item.backgroundColor
     }
     
     // MARK: - Configure View
     
     private func configureStyle() {
-        backgroundColor = .systemPink.withAlphaComponent(0.5)
+        backgroundColor = .systemPink
         clipsToBounds = true
         layer.cornerRadius = 10
         layer.borderWidth = 2
-        layer.borderColor = UIColor.systemPink.cgColor
+        layer.borderColor = UIColor.black.cgColor
     }
     
     private func configureGesture() {
@@ -89,13 +73,13 @@ final class CardView: UIView {
     // MARK: - Constraints
     
     private func setupLayout() {
-        addSubview(contentStack)
+        addSubview(iconImageView)
         
         NSLayoutConstraint.activate([
-            contentStack.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
-            contentStack.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor),
-            contentStack.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
-            contentStack.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
+            iconImageView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
+            iconImageView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor),
+            iconImageView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
+            iconImageView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
         ])
     }
 }

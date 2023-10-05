@@ -8,7 +8,8 @@
 import UIKit
 
 struct CardItem {
-    let imageString: String
+    let imageString: String?
     let number: Int
-    let color: UIColor
+    let backgroundColor: UIColor
+    let borderColor: UIColor
 }

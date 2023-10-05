@@ -74,7 +74,7 @@ final class CardPickerView: UIView {
     private func setupBindings() {
         onCardItems = { items in
             _ = items.map { CardView(item: $0) }
-                .map { self.contentStack.addArrangedSubview($0) }
+                .map { self.cardStack.addArrangedSubview($0) }
         }
     }
     

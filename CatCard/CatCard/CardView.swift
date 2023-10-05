@@ -21,7 +21,8 @@ final class CardView: UIView {
     private let numberLabel: UILabel = {
         let label = UILabel()
         label.text = "7"
-        label.font = .systemFont(ofSize: 24, weight: .bold)
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 40, weight: .bold)
         label.adjustsFontForContentSizeCategory = true
         return label
     }()
@@ -32,7 +33,6 @@ final class CardView: UIView {
         stack.axis = .vertical
         stack.alignment = .fill
         stack.distribution = .fill
-        stack.spacing = 8
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -56,15 +56,17 @@ final class CardView: UIView {
         iconImageView.tintColor = item.color
         numberLabel.textColor = item.color
         layer.borderColor = item.color.cgColor
+        backgroundColor = item.color.withAlphaComponent(0.5)
     }
     
     // MARK: - Configure View
     
     private func configureStyle() {
+        backgroundColor = .systemPink.withAlphaComponent(0.5)
         clipsToBounds = true
         layer.cornerRadius = 10
-        layer.borderWidth = 1
-        layer.borderColor = UIColor.black.cgColor
+        layer.borderWidth = 2
+        layer.borderColor = UIColor.systemPink.cgColor
     }
     
     // MARK: - Constraints

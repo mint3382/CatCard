@@ -45,6 +45,13 @@ final class CardView: UIView {
         configureStyle()
     }
     
+    func configureCard(with item: CardItem) {
+        iconImageView.image = UIImage(named: item.imageString)
+        iconImageView.tintColor = item.color
+        numberLabel.textColor = item.color
+        layer.borderColor = item.color.cgColor
+    }
+    
     // MARK: - Configure View
     
     private func configureStyle() {

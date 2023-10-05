@@ -8,10 +8,12 @@
 import UIKit
 
 protocol CardPickerViewModelProtocol {
-    var onCardItems: (([CardItem]) -> Void)? { get }
+    var onUserCardItems: (([CardItem]) -> Void)? { get }
+    var onAICardItems: (([CardItem]) -> Void)? { get }
 }
 
 final class CardPickerViewModel: CardPickerViewModelProtocol {
     
-    var onCardItems: (([CardItem]) -> Void)?
+    var onUserCardItems: (([CardItem]) -> Void)?
+    var onAICardItems: (([CardItem]) -> Void)?
 }

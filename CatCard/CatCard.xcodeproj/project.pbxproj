@@ -13,6 +13,7 @@
 		921137DD2ACEB39700B31DCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921137DB2ACEB39700B31DCE /* Main.storyboard */; };
 		921137DF2ACEB39800B31DCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 921137DE2ACEB39800B31DCE /* Assets.xcassets */; };
 		921137E22ACEB39800B31DCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921137E02ACEB39800B31DCE /* LaunchScreen.storyboard */; };
+		FF339B502ACEC00B00642F2E /* CardActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF339B4F2ACEC00B00642F2E /* CardActionButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		921137DE2ACEB39800B31DCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		921137E12ACEB39800B31DCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		921137E32ACEB39800B31DCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF339B4F2ACEC00B00642F2E /* CardActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardActionButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				921137D52ACEB39700B31DCE /* AppDelegate.swift */,
 				921137D72ACEB39700B31DCE /* SceneDelegate.swift */,
+				FF339B4F2ACEC00B00642F2E /* CardActionButton.swift */,
 				921137D92ACEB39700B31DCE /* ViewController.swift */,
 				921137DB2ACEB39700B31DCE /* Main.storyboard */,
 				921137DE2ACEB39800B31DCE /* Assets.xcassets */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				921137DA2ACEB39700B31DCE /* ViewController.swift in Sources */,
+				FF339B502ACEC00B00642F2E /* CardActionButton.swift in Sources */,
 				921137D62ACEB39700B31DCE /* AppDelegate.swift in Sources */,
 				921137D82ACEB39700B31DCE /* SceneDelegate.swift in Sources */,
 			);

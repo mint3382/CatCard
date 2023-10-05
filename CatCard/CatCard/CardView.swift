@@ -23,6 +23,16 @@ final class CardView: UIView {
         return label
     }()
     
+    private lazy var contentStack: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [iconImageView,
+                                                  numberLabel])
+        stack.axis = .vertical
+        stack.alignment = .fill
+        stack.distribution = .fill
+        stack.spacing = 8
+        return stack
+    }()
+    
     // MARK: - Initialization
     
     override init(frame: CGRect) {
@@ -42,5 +52,11 @@ final class CardView: UIView {
         layer.cornerRadius = 10
         layer.borderWidth = 1
         layer.borderColor = UIColor.black.cgColor
+    }
+    
+    // MARK: - Constraints
+    
+    private func setupLayout() {
+        addSubview(contentStack)
     }
 }

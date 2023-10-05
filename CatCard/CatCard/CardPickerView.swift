@@ -9,18 +9,47 @@ import UIKit
 
 final class CardPickerView: UIView {
     
+    private let firstActionButton: CardActionButton = {
+        let button = CardActionButton()
+        return button
+    }()
+    
+    private let secondActionButton: CardActionButton = {
+        let button = CardActionButton()
+        return button
+    }()
+    
+    private let thirdActionButton: CardActionButton = {
+        let button = CardActionButton()
+        return button
+    }()
+    
     private lazy var actionButtonStack: UIStackView = {
-        let stack = UIStackView()
+        let stack = UIStackView(arrangedSubviews: [firstActionButton,
+                                                  secondActionButton,
+                                                  thirdActionButton])
+        stack.axis = .horizontal
+        stack.alignment = .center
+        stack.distribution = .fillEqually
+        stack.spacing = 16
         return stack
     }()
     
     private lazy var cardStack: UIStackView = {
         let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.alignment = .fill
+        stack.distribution = .fillEqually
         return stack
     }()
     
     private lazy var contentStack: UIStackView = {
-        let stack = UIStackView()
+        let stack = UIStackView(arrangedSubviews: [actionButtonStack,
+                                                  cardStack])
+        stack.axis = .vertical
+        stack.alignment = .fill
+        stack.distribution = .fill
+        stack.spacing = 16
         return stack
     }()
     

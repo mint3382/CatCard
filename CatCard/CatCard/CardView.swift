@@ -9,6 +9,20 @@ import UIKit
 
 final class CardView: UIView {
     
+    // MARK: - Views
+    
+    private let iconImageView: UIImageView = {
+        let view = UIImageView()
+        return view
+    }()
+    
+    private let numberLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 24, weight: .bold)
+        label.adjustsFontForContentSizeCategory = true
+        return label
+    }()
+    
     // MARK: - Initialization
     
     override init(frame: CGRect) {

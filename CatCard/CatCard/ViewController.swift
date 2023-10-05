@@ -68,5 +68,10 @@ class ViewController: UIViewController {
             //우승자 선언 알럿
         }
     }
+    
+    //게임 다시 시작
+    func resetCardGame() {
+        gameManager.resetGame()
+    }
 }
 

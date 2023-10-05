@@ -8,7 +8,7 @@
 import Foundation
 
 struct GameManager {
-    let cardDummy = CardDummy()
+    var cardDummy = CardDummy()
     var user: User = User()
     var computer: Computer = Computer()
     
@@ -118,5 +118,13 @@ struct GameManager {
         } else {
             return computer
         }
+    }
+    
+    mutating func resetGame() {
+        cardDummy = CardDummy()
+        user = User()
+        computer = Computer()
+        
+        prepareGame()
     }
 }

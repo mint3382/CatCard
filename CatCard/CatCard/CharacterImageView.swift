@@ -21,9 +21,21 @@ final class CharacterImageView: UIImageView {
         configureStyle()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        configureRoundedImage()
+    }
+    
     // MARK: - Configure View
     
     private func configureStyle() {
-        
+        image = UIImage(systemName: "person.fill")
+    }
+    
+    private func configureRoundedImage() {
+        clipsToBounds = true
+        layer.cornerRadius = bounds.width / 2
+        layer.borderWidth = 4
+        layer.borderColor = UIColor.systemYellow.cgColor
     }
 }

@@ -11,9 +11,8 @@ final class CharacterView: UIView {
     
     // MARK: - Views
     
-    private let charaterImageView: UIImageView = {
-        let view = UIImageView()
-        view.image = UIImage(systemName: "person.fill")
+    private let charaterImageView: CharacterImageView = {
+        let view = CharacterImageView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

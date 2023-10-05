@@ -24,6 +24,9 @@ final class CardView: UIView {
     // MARK: - Configure View
     
     private func configureStyle() {
-        
+        clipsToBounds = true
+        layer.cornerRadius = 10
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.black.cgColor
     }
 }

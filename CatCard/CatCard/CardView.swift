@@ -33,6 +33,7 @@ final class CardView: UIView {
         stack.alignment = .fill
         stack.distribution = .fill
         stack.spacing = 8
+        stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
     
@@ -41,11 +42,13 @@ final class CardView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureStyle()
+        setupLayout()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         configureStyle()
+        setupLayout()
     }
     
     func configureCard(with item: CardItem) {
@@ -68,5 +71,12 @@ final class CardView: UIView {
     
     private func setupLayout() {
         addSubview(contentStack)
+        
+        NSLayoutConstraint.activate([
+            contentStack.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
+            contentStack.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor),
+            contentStack.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
+            contentStack.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
+        ])
     }
 }

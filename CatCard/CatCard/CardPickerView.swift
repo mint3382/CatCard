@@ -53,6 +53,7 @@ final class CardPickerView: UIView {
         stack.alignment = .fill
         stack.distribution = .fill
         stack.spacing = 16
+        stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
     

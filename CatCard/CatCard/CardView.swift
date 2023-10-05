@@ -13,11 +13,14 @@ final class CardView: UIView {
     
     private let iconImageView: UIImageView = {
         let view = UIImageView()
+        view.image = UIImage(systemName: "cloud.fill")
+        view.image?.withRenderingMode(.alwaysOriginal)
         return view
     }()
     
     private let numberLabel: UILabel = {
         let label = UILabel()
+        label.text = "7"
         label.font = .systemFont(ofSize: 24, weight: .bold)
         label.adjustsFontForContentSizeCategory = true
         return label

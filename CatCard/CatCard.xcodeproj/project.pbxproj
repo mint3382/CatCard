@@ -15,6 +15,7 @@
 		921137E22ACEB39800B31DCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921137E02ACEB39800B31DCE /* LaunchScreen.storyboard */; };
 		921137EA2ACEC0A500B31DCE /* CatSpecies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921137E92ACEC0A500B31DCE /* CatSpecies.swift */; };
 		921137EC2ACEC12A00B31DCE /* ResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921137EB2ACEC12A00B31DCE /* ResourceType.swift */; };
+		921137F02ACECFDD00B31DCE /* PlayerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921137EF2ACECFDD00B31DCE /* PlayerProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		921137E32ACEB39800B31DCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		921137E92ACEC0A500B31DCE /* CatSpecies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatSpecies.swift; sourceTree = "<group>"; };
 		921137EB2ACEC12A00B31DCE /* ResourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceType.swift; sourceTree = "<group>"; };
+		921137EF2ACECFDD00B31DCE /* PlayerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				921137D92ACEB39700B31DCE /* ViewController.swift */,
 				921137E92ACEC0A500B31DCE /* CatSpecies.swift */,
 				921137EB2ACEC12A00B31DCE /* ResourceType.swift */,
+				921137EF2ACECFDD00B31DCE /* PlayerProtocol.swift */,
 				921137DB2ACEB39700B31DCE /* Main.storyboard */,
 				921137DE2ACEB39800B31DCE /* Assets.xcassets */,
 				921137E02ACEB39800B31DCE /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				921137F02ACECFDD00B31DCE /* PlayerProtocol.swift in Sources */,
 				921137DA2ACEB39700B31DCE /* ViewController.swift in Sources */,
 				921137EA2ACEC0A500B31DCE /* CatSpecies.swift in Sources */,
 				921137EC2ACEC12A00B31DCE /* ResourceType.swift in Sources */,

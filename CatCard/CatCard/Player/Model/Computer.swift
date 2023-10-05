@@ -8,6 +8,7 @@
 import Foundation
 
 struct Computer: Player {
+    var playerType: PlayerType = .computer
     var resourceCards: [ResourceType : Int] = [.love: 0, .food: 0, .toy: 0, .time: 0, .money: 0]
     var catCards: [CatSpecies : Int] = [.cat: 0, .tiger: 0]
     
@@ -15,11 +16,12 @@ struct Computer: Player {
     func randomCardsForChange() -> [ResourceType: Int] {
         var pickCards: [ResourceType: Int] = [.love: 0, .food: 0, .toy: 0, .time: 0, .money: 0]
         for _ in 1...5 {
-            guard let pick = resourceCards.randomElement() else {
+            guard let pick = resourceCards.randomElement(),
+                  let oldValue = pickCards[pick.key] else {
                 return pickCards
             }
             
-            pickCards[pick.key] = pick.value
+            pickCards[pick.key] = pick.value + oldValue
         }
         
         return pickCards

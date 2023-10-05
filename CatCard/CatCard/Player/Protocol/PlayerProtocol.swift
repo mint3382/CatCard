@@ -7,7 +7,13 @@
 
 import Foundation
 
+enum PlayerType {
+    case computer
+    case user
+}
+
 protocol Player {
+    var playerType: PlayerType { get }
     var resourceCards: [ResourceType: Int] { get set }
     var catCards: [CatSpecies: Int] { get set }
 }

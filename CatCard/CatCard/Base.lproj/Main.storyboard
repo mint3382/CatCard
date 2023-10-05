@@ -24,18 +24,17 @@
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dcl-u0-liG" customClass="CardView" customModule="CatCard" customModuleProvider="target">
                                 <rect key="frame" x="171.66666666666666" y="459.66666666666669" width="50" height="100.00000000000006"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="WhF-ES-GU2"/>
                                     <constraint firstAttribute="height" constant="100" id="fSo-uc-n5y"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13m-0S-bQa">
-                                <rect key="frame" x="41" y="176" width="75" height="35"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bdi-LX-WxU">
+                                <rect key="frame" x="76" y="120" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                            </button>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -55,6 +54,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

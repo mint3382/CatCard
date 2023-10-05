@@ -17,13 +17,6 @@ final class CharacterView: UIView {
         return view
     }()
     
-    private let characterNameLabel: UILabel = {
-        let label = UILabel()
-        label.text = "빡빡이"
-        label.font = .systemFont(ofSize: 16, weight: .bold)
-        return label
-    }()
-    
     private let turnStateLabel: UILabel = {
         let label = UILabel()
         label.text = "차례"
@@ -32,14 +25,22 @@ final class CharacterView: UIView {
         return label
     }()
     
+    private let characterNameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "빡빡이"
+        label.font = .systemFont(ofSize: 16, weight: .bold)
+        return label
+    }()
+    
     private lazy var contentStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [charaterImageView,
-                                                  characterNameLabel,
-                                                  turnStateLabel])
+        let stack = UIStackView(arrangedSubviews: [turnStateLabel,
+                                                   charaterImageView,
+                                                   characterNameLabel])
         stack.axis = .vertical
         stack.alignment = .center
         stack.distribution = .fill
-        stack.spacing = 8
+        stack.spacing = -8
+        stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
     
@@ -58,7 +59,14 @@ final class CharacterView: UIView {
     // MARK: - Configure View
     
     private func configureStyle() {
+        addSubview(contentStack)
         
+        NSLayoutConstraint.activate([
+            contentStack.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
+            contentStack.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor),
+            contentStack.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
+            contentStack.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
+        ])
     }
 }
 

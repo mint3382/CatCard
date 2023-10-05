@@ -9,7 +9,11 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // MARK: - Dependencies
+    
     private let viewModel: CardPickerViewModelProtocol!
+    
+    // MARK: - Initialization
     
     init(viewModel: CardPickerViewModelProtocol = CardPickerViewModel()) {
         self.viewModel = viewModel
@@ -21,11 +25,37 @@ class ViewController: UIViewController {
         super.init(coder: coder)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
+    // MARK: - Views
 
+    private let cardPickerView: CardPickerView = {
+        let view = CardPickerView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
 
 }
 
+// MARK: - Life Cycle
+
+extension ViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupLayout()
+    }
+}
+
+// MARK: - Private Methods
+
+extension ViewController {
+    
+    private func setupLayout() {
+        view.addSubview(cardPickerView)
+        
+        NSLayoutConstraint.activate([
+            cardPickerView.widthAnchor.constraint(equalToConstant: view.bounds.width),
+            cardPickerView.heightAnchor.constraint(equalToConstant: view.bounds.height * 0.3),
+            cardPickerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            cardPickerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 8)
+        ])
+    }
+}

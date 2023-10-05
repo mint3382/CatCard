@@ -14,6 +14,7 @@
 		921137DF2ACEB39800B31DCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 921137DE2ACEB39800B31DCE /* Assets.xcassets */; };
 		921137E22ACEB39800B31DCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921137E02ACEB39800B31DCE /* LaunchScreen.storyboard */; };
 		FF339B502ACEC00B00642F2E /* CardActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF339B4F2ACEC00B00642F2E /* CardActionButton.swift */; };
+		FF339B542ACECE9500642F2E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF339B532ACECE9500642F2E /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		921137E12ACEB39800B31DCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		921137E32ACEB39800B31DCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF339B4F2ACEC00B00642F2E /* CardActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardActionButton.swift; sourceTree = "<group>"; };
+		FF339B532ACECE9500642F2E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				921137D52ACEB39700B31DCE /* AppDelegate.swift */,
 				921137D72ACEB39700B31DCE /* SceneDelegate.swift */,
 				FF339B4F2ACEC00B00642F2E /* CardActionButton.swift */,
+				FF339B532ACECE9500642F2E /* CardView.swift */,
 				921137D92ACEB39700B31DCE /* ViewController.swift */,
 				921137DB2ACEB39700B31DCE /* Main.storyboard */,
 				921137DE2ACEB39800B31DCE /* Assets.xcassets */,
@@ -145,6 +148,7 @@
 				FF339B502ACEC00B00642F2E /* CardActionButton.swift in Sources */,
 				921137D62ACEB39700B31DCE /* AppDelegate.swift in Sources */,
 				921137D82ACEB39700B31DCE /* SceneDelegate.swift in Sources */,
+				FF339B542ACECE9500642F2E /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

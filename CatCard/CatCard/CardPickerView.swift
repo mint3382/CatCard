@@ -9,6 +9,8 @@ import UIKit
 
 final class CardPickerView: UIView {
     
+    private var onCardItems: (([CardItem]) -> Void)?
+    
     private let firstActionButton: CardActionButton = {
         let button = CardActionButton()
         button.setTitle("FIRST", for: .normal)
@@ -59,12 +61,21 @@ final class CardPickerView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupBindings()
         setupLayout()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        setupBindings()
         setupLayout()
+    }
+    
+    private func setupBindings() {
+        onCardItems = { items in
+            _ = items.map { CardView(item: $0) }
+                .map { self.contentStack.addArrangedSubview($0) }
+        }
     }
     
     private func setupLayout() {

@@ -61,7 +61,8 @@ final class CardView: UIView {
         setupLayout()
     }
     
-    func configureCard(with item: CardItem) {
+    convenience init(item: CardItem) {
+        self.init(frame: .zero)
         iconImageView.image = UIImage(named: item.imageString)
         iconImageView.tintColor = item.color
         numberLabel.textColor = item.color

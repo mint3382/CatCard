@@ -49,6 +49,12 @@ extension ViewController {
 
 extension ViewController {
     
+    private func setupBindings() {
+        viewModel.onUserCardItems = {
+            self.cardPickerView.onCardItems?($0)
+        }
+    }
+    
     private func setupLayout() {
         view.addSubview(cardPickerView)
         

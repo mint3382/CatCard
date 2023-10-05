@@ -19,6 +19,7 @@
 		FF339B582ACEE22800642F2E /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF339B572ACEE22800642F2E /* CharacterView.swift */; };
 		FF339B5C2ACEFA3000642F2E /* CharacterImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF339B5B2ACEFA3000642F2E /* CharacterImageView.swift */; };
 		FF339B602ACF028700642F2E /* CharacterLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF339B5F2ACF028700642F2E /* CharacterLabel.swift */; };
+		FF339B642ACF06DD00642F2E /* CardPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF339B632ACF06DD00642F2E /* CardPickerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		FF339B572ACEE22800642F2E /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
 		FF339B5B2ACEFA3000642F2E /* CharacterImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterImageView.swift; sourceTree = "<group>"; };
 		FF339B5F2ACF028700642F2E /* CharacterLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterLabel.swift; sourceTree = "<group>"; };
+		FF339B632ACF06DD00642F2E /* CardPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPickerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				FF339B572ACEE22800642F2E /* CharacterView.swift */,
 				FF339B5B2ACEFA3000642F2E /* CharacterImageView.swift */,
 				FF339B5F2ACF028700642F2E /* CharacterLabel.swift */,
+				FF339B632ACF06DD00642F2E /* CardPickerViewModel.swift */,
 				921137D92ACEB39700B31DCE /* ViewController.swift */,
 				921137DB2ACEB39700B31DCE /* Main.storyboard */,
 				921137DE2ACEB39800B31DCE /* Assets.xcassets */,
@@ -156,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF339B642ACF06DD00642F2E /* CardPickerViewModel.swift in Sources */,
 				921137DA2ACEB39700B31DCE /* ViewController.swift in Sources */,
 				FF339B502ACEC00B00642F2E /* CardActionButton.swift in Sources */,
 				FF339B602ACF028700642F2E /* CharacterLabel.swift in Sources */,

@@ -9,13 +9,45 @@ import Foundation
 
 struct GameManager {
     let cardDummy = CardDummy()
-    var user: Player = User()
-    var computer: Player = Computer()
+    var user: User = User()
+    var computer: Computer = Computer()
     
     //게임 준비(카드 각각 12장씩 배부)
     mutating func prepareGame() {
-        cardDummy.distributeStartCards(player: &user)
-        cardDummy.distributeStartCards(player: &computer)
+        playerGetResourceCard(player: .user, count: 12)
+        playerGetResourceCard(player: .computer, count: 12)
+    }
+    
+    //자원 카드 교환하기(플레이어 -> 더미, 더미 -> 플레이어)
+    mutating func mixResourceCards(player: PlayerType, cards: [ResourceType: Int]) {
+        let count = cardDummy.exchangeResourceCard(cards: cards)
+        playerGetResourceCard(player: player, count: count)
+    }
+    
+    //자원 카드 전달하기(더미 -> 플레이어)
+    mutating private func playerGetResourceCard(player: PlayerType, count: Int) {
+        for _ in 1...count {
+            let card = cardDummy.pickOneRandomResource()
+            
+            switch player {
+            case .user:
+                user.addResourceCard(resourceType: card)
+            case .computer:
+                computer.addResourceCard(resourceType: card)
+            }
+        }
+    }
+    
+    //고양이 카드 전달하기(더미 -> 플레이어)
+    mutating private func playerGetCatCard(player: PlayerType) {
+        let card = cardDummy.randomCatCard()
+        
+        switch player {
+        case .user:
+            user.addCatCard(catSpecies: card)
+        case .computer:
+            computer.addCatCard(catSpecies: card)
+        }
     }
     
     //카드 개수 확인
@@ -30,7 +62,7 @@ struct GameManager {
     }
     
     //점수 계산
-    func checkWinnerCount() -> (userScore: Int, computerScore: Int) {
+    private func checkWinnerCount() -> (userScore: Int, computerScore: Int) {
         var userScore: Int = 0
         var computerScore: Int = 0
         if let userCatCount = user.catCards[.cat],
@@ -44,20 +76,35 @@ struct GameManager {
         return (userScore, computerScore)
     }
     
-    //고양이 입양 방법
-    mutating func changeCatCard(player: inout Player) {
-        if player.resourceCards.allSatisfy({ $0.value >= 1 }) {
-            player.removeResourceCard(cards: [.love: 1, .food: 1, .toy: 1, .time: 1, .money: 1])
-            cardDummy.randomResource(player: &player)
-        } else if let loveCards = player.resourceCards[.love], loveCards >= 10 {
-            player.removeResourceCard(cards: [.love: 10])
+    //고양이 입양 방법 (자원 카드 내고, 자원 카드 받고)
+    mutating func changeCatCard(player: PlayerType) {
+        switch player {
+        case .user:
+            if user.resourceCards.allSatisfy({ $0.value >= 1 }) {
+                user.removeResourceCard(cards: [.love: 1, .food: 1, .toy: 1, .time: 1, .money: 1])
+                playerGetResourceCard(player: player, count: 5)
+            } else if let loveCards = user.resourceCards[.love], loveCards >= 10 {
+                user.removeResourceCard(cards: [.love: 10])
+                playerGetResourceCard(player: player, count: 10)
+            }
             
+            playerGetCatCard(player: .user)
+        case .computer:
+            if computer.resourceCards.allSatisfy({ $0.value >= 1 }) {
+                computer.removeResourceCard(cards: [.love: 1, .food: 1, .toy: 1, .time: 1, .money: 1])
+                playerGetResourceCard(player: player, count: 5)
+            } else if let loveCards = computer.resourceCards[.love], loveCards >= 10 {
+                computer.removeResourceCard(cards: [.love: 10])
+                playerGetResourceCard(player: player, count: 10)
+            }
+            
+            playerGetCatCard(player: .computer)
         }
     }
     
     //호랑이인지 확인
     func isBiteByTiger() -> Bool {
-        if cardDummy.CountingTigerCard() < 2 {
+        if let tiger = user.catCards[.tiger], tiger > 0 {
             return true
         } else {
             return false

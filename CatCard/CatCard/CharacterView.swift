@@ -26,7 +26,9 @@ final class CharacterView: UIView {
     
     private let characterNameLabel: CharacterLabel = {
         let label = CharacterLabel()
-        label.text = "빡빡이"
+        label.text = "빡빡빡빡빡이"
+        label.minimumScaleFactor = 0.7
+        label.adjustsFontSizeToFitWidth = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -58,9 +60,13 @@ final class CharacterView: UIView {
             
             turnStateLabel.centerXAnchor.constraint(equalTo: charaterImageView.centerXAnchor),
             turnStateLabel.bottomAnchor.constraint(equalTo: charaterImageView.topAnchor, constant: 8),
+            turnStateLabel.widthAnchor.constraint(equalTo: charaterImageView.widthAnchor, multiplier: 0.6),
+            turnStateLabel.heightAnchor.constraint(equalTo: turnStateLabel.widthAnchor, multiplier: 0.4),
             
             characterNameLabel.centerXAnchor.constraint(equalTo: charaterImageView.centerXAnchor),
-            characterNameLabel.topAnchor.constraint(equalTo: charaterImageView.bottomAnchor, constant: -8)
+            characterNameLabel.topAnchor.constraint(equalTo: charaterImageView.bottomAnchor, constant: -16),
+            characterNameLabel.widthAnchor.constraint(equalTo: charaterImageView.widthAnchor, multiplier: 0.8),
+            characterNameLabel.heightAnchor.constraint(equalTo: characterNameLabel.widthAnchor, multiplier: 0.3),
         ])
     }
 }

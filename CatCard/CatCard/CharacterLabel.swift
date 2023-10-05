@@ -27,13 +27,14 @@ final class CharacterLabel: UILabel {
     }
     
     override func drawText(in rect: CGRect) {
-        super.drawText(in: rect.inset(by: .init(top: 8, left: 8, bottom: 8, right: 8)))
+        super.drawText(in: rect.inset(by: .init(top: 4, left: 8, bottom: 4, right: 8)))
     }
     
     // MARK: - Configure View
     
     private func configureStyle() {
         font = .systemFont(ofSize: 16, weight: .bold)
+        textAlignment = .center
         backgroundColor = .systemPurple.withAlphaComponent(0.8)
     }
     

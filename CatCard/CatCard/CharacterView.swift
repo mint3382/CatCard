@@ -14,14 +14,15 @@ final class CharacterView: UIView {
     private let charaterImageView: UIImageView = {
         let view = UIImageView()
         view.image = UIImage(systemName: "person.fill")
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     private let turnStateLabel: UILabel = {
         let label = UILabel()
-        label.text = "차례"
+        label.text = "Turn"
         label.font = .systemFont(ofSize: 16, weight: .bold)
-        label.isEnabled = false
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -29,43 +30,40 @@ final class CharacterView: UIView {
         let label = UILabel()
         label.text = "빡빡이"
         label.font = .systemFont(ofSize: 16, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
-    }()
-    
-    private lazy var contentStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [turnStateLabel,
-                                                   charaterImageView,
-                                                   characterNameLabel])
-        stack.axis = .vertical
-        stack.alignment = .center
-        stack.distribution = .fill
-        stack.spacing = -8
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        return stack
     }()
     
     // MARK: - Initialization
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configureStyle()
+        setupLayout()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        configureStyle()
+        setupLayout()
     }
     
-    // MARK: - Configure View
+    // MARK: - Constraints
     
-    private func configureStyle() {
-        addSubview(contentStack)
+    private func setupLayout() {
+        _ = [charaterImageView, turnStateLabel, characterNameLabel].map {
+            addSubview($0)
+        }
         
         NSLayoutConstraint.activate([
-            contentStack.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
-            contentStack.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor),
-            contentStack.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
-            contentStack.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
+            charaterImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            charaterImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            charaterImageView.widthAnchor.constraint(equalTo: widthAnchor),
+            charaterImageView.heightAnchor.constraint(equalTo: charaterImageView.widthAnchor),
+            
+            turnStateLabel.centerXAnchor.constraint(equalTo: charaterImageView.centerXAnchor),
+            turnStateLabel.bottomAnchor.constraint(equalTo: charaterImageView.topAnchor, constant: 8),
+            
+            characterNameLabel.centerXAnchor.constraint(equalTo: charaterImageView.centerXAnchor),
+            characterNameLabel.topAnchor.constraint(equalTo: charaterImageView.bottomAnchor, constant: -8)
         ])
     }
 }

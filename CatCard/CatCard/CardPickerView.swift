@@ -45,6 +45,7 @@ final class CardPickerView: UIView {
         stack.axis = .horizontal
         stack.alignment = .fill
         stack.distribution = .fillEqually
+        stack.spacing = -16
         return stack
     }()
     

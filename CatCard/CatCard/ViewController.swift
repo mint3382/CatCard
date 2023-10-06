@@ -48,6 +48,9 @@ extension ViewController {
         super.viewDidLoad()
         setupBindings()
         setupLayout()
+        
+        let items = (1...10).map { CardItem(imageString: nil, number: $0, backgroundColor: .systemPink, borderColor: .black) }
+        viewModel.onUserCardItems?(items)
     }
 }
 
@@ -86,7 +89,7 @@ extension ViewController {
             cardPickerView.widthAnchor.constraint(equalToConstant: view.bounds.width),
             cardPickerView.heightAnchor.constraint(equalToConstant: view.bounds.height * 0.3),
             cardPickerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            cardPickerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 8)
+            cardPickerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
         ])
     }
 }

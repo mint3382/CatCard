@@ -17,7 +17,7 @@ final class CardPickerView: UIView {
     
     private lazy var firstActionButton: CardActionButton = {
         let button = CardActionButton()
-        button.setTitle("FIRST", for: .normal)
+        button.setTitle("MIX", for: .normal)
         button.addAction(UIAction { _ in
             self.firstActionButtonTapped?()
         }, for: .touchUpInside)
@@ -26,7 +26,7 @@ final class CardPickerView: UIView {
     
     private lazy var secondActionButton: CardActionButton = {
         let button = CardActionButton()
-        button.setTitle("SECOND", for: .normal)
+        button.setTitle("ADOPT", for: .normal)
         button.addAction(UIAction { _ in
             self.secondActionButtonTapped?()
         }, for: .touchUpInside)
@@ -35,7 +35,7 @@ final class CardPickerView: UIView {
     
     private lazy var thirdActionButton: CardActionButton = {
         let button = CardActionButton()
-        button.setTitle("THIRD", for: .normal)
+        button.setTitle("RULE", for: .normal)
         button.addAction(UIAction { _ in
             self.thirdActionButtonTapped?()
         }, for: .touchUpInside)

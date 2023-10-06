@@ -118,6 +118,15 @@ extension ViewController {
     
     private func showAlert(imageName: String, title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let imageView = UIImageView(frame: CGRect(x: 10, y: 50, width: 250, height: 230))
+        imageView.image = UIImage(named: imageName)
+        alert.view.addSubview(imageView)
+        
+        let height = NSLayoutConstraint(item: alert.view!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 320)
+        let width = NSLayoutConstraint(item: alert.view!, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 250)
+        
+        alert.view.addConstraint(height)
+        alert.view.addConstraint(width)
         let action = UIAlertAction(title: "확인", style: .default)
         alert.addAction(action)
         present(alert, animated: true)

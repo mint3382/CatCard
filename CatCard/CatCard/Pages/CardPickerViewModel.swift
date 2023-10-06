@@ -32,9 +32,9 @@ final class CardPickerViewModel: CardPickerViewModelProtocol {
     var showAlert: ((_ imageName: String, _ title: String, _ message: String) -> Void)?
     
     init() {
-        didTapFirstActionButton = {}
-        didTapSecondActionButton = {}
-        didTapThirdActionButton = {}
+        didTapFirstActionButton = { self.tappedMixButton() }
+        didTapSecondActionButton = { self.tappedAdoptCatButton() }
+        didTapThirdActionButton = { self.explainGameRule() }
     }
     
     //게임 준비
@@ -56,8 +56,10 @@ final class CardPickerViewModel: CardPickerViewModelProtocol {
     func tappedAdoptCatButton() {
         if selectedCards.allSatisfy({ $0.value >= 1 }) {
             //5장으로 고양이를 입양하시겠습니까?
+            userAdoptCat()
         } else if let loveCard = selectedCards[.love], loveCard >= 10 {
             //10장으로 고양이를 입양하시겠습니까?
+            userAdoptCat()
         } else {
             //잘못된 선택입니다 알럿
         }
@@ -68,8 +70,10 @@ final class CardPickerViewModel: CardPickerViewModelProtocol {
         
         if gameManager.isBiteByTiger() {
             //게임 오버 알럿
+            biteByTigerGameOver()
         } else {
             //고양이 입양 완료 알럿
+            notifyAdoptComplete()
             checkTimingForFinish()
             reactComputer()
         }
@@ -90,7 +94,11 @@ final class CardPickerViewModel: CardPickerViewModelProtocol {
         let lastCards = gameManager.checkResourceCardDummy()
         if lastCards <= 10 {
             let winner = gameManager.countScore()
-            //우승자 선언 알럿
+            if winner == .user {
+                winTheGame()
+            } else {
+                loseTheGame()
+            }
         }
     }
     
@@ -100,7 +108,7 @@ final class CardPickerViewModel: CardPickerViewModelProtocol {
     }
     
     func explainGameRule() {
-        //게임 규칙 설명 알럿
+        discussionGameRule()
     }
     
     //호랑이 게임 종료 알럿

@@ -13,6 +13,8 @@ protocol CardPickerViewModelProtocol {
     var didTapThirdActionButton: (() -> Void)? { get }
     var onUserCardItems: (([CardItem]) -> Void)? { get set }
     var onAICardItems: (([CardItem]) -> Void)? { get set }
+    
+    func prepareGame()
 }
 
 final class CardPickerViewModel: CardPickerViewModelProtocol {
@@ -35,6 +37,10 @@ final class CardPickerViewModel: CardPickerViewModelProtocol {
     //게임 준비
     func prepareGame() {
         gameManager.prepareGame()
+        print(gameManager.user.resourceCards)
+        let items = gameManager.user.toCardItems()
+        
+        onUserCardItems?(items)
     }
     
     //섞기 버튼

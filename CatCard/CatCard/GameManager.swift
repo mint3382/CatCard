@@ -26,19 +26,28 @@ struct GameManager {
     
     //자원 카드 전달하기(더미 -> 플레이어)
     mutating private func playerGetResourceCard(_ playerType: PlayerType, count: Int) {
-        var player: Player = checkPlayerType(playerType)
+        var player = checkPlayerType(playerType)
         
         for _ in 1...count {
             let card = cardDummy.pickOneRandomResource()
+            guard let count = cardDummy.resourceDummy[card] else {
+                return
+            }
             
+            cardDummy.resourceDummy[card] = count - 1
             player.addResourceCard(resourceType: card)
         }
     }
     
     //고양이 카드 전달하기(더미 -> 플레이어)
     mutating private func playerGetCatCard(_ playerType: PlayerType) {
-        var player: Player = checkPlayerType(playerType)
+        var player = checkPlayerType(playerType)
         let card = cardDummy.randomCatCard()
+        guard let count = cardDummy.catDummy[card] else {
+            return
+        }
+        
+        cardDummy.catDummy[card] = count - 1
         
         player.addCatCard(catSpecies: card)
     }
@@ -71,7 +80,7 @@ struct GameManager {
     
     //고양이 입양 방법 (자원 카드 내고, 자원 카드 받고)
     mutating func changeCatCard(_ playerType: PlayerType) {
-        var player: Player = checkPlayerType(playerType)
+        var player = checkPlayerType(playerType)
         
         if player.resourceCards.allSatisfy({ $0.value >= 1 }) {
             player.removeResourceCard(cards: [.love: 1, .food: 1, .toy: 1, .time: 1, .money: 1])

@@ -59,9 +59,10 @@ extension ViewController {
         super.viewDidLoad()
         setupBindings()
         setupLayout()
+        viewModel.prepareGame()
         
-        let items = (1...10).map { CardItem(imageString: nil, number: $0, backgroundColor: .systemPink, borderColor: .black) }
-        viewModel.onUserCardItems?(items)
+//        let items = (1...10).map { CardItem(imageString: nil, number: $0, backgroundColor: .systemPink, borderColor: .black) }
+//        viewModel.onUserCardItems?(items)
     }
 }
 

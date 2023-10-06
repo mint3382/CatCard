@@ -21,7 +21,6 @@ final class CardView: UIView {
     
     private let iconImageView: UIImageView = {
         let view = UIImageView()
-        view.image = UIImage(systemName: "cluod.fill")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -44,20 +43,17 @@ final class CardView: UIView {
     
     convenience init(item: CardItem) {
         self.init(frame: .zero)
-        guard let named = item.imageString else {
-            iconImageView.image = UIImage(systemName: "cloud.fill")?
-                .withTintColor(item.borderColor, renderingMode: .alwaysOriginal)
+        guard let image = item.resourceType.image else {
             return
         }
-        iconImageView.image = UIImage(named: named)
-        layer.borderColor = item.borderColor.cgColor
-        backgroundColor = item.backgroundColor
+        iconImageView.image = image
+
     }
     
     // MARK: - Configure View
     
     private func configureStyle() {
-        backgroundColor = .systemPink
+//        backgroundColor = .systemPink
         clipsToBounds = true
         layer.cornerRadius = 10
         layer.borderWidth = 2

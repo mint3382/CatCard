@@ -16,4 +16,20 @@ struct User: Player {
         self.resourceCards = resourceCards
         self.catCards = catCards
     }
+    
+    func toCardItems() -> [CardItem] {
+        let resourcePack = resourceCards.filter { $0.value != 0 }
+        var cardPack: [CardItem] = []
+        
+        let _: [()] = resourcePack.map { (resource, count) in
+            for _ in 1...count {
+                let card = CardItem(resourceType: resource)
+                
+                cardPack.append(card)
+            }
+        }
+        
+        print(resourceCards)
+        return cardPack
+    }
 }

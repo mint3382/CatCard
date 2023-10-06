@@ -83,10 +83,16 @@ extension ViewController {
     }
     
     private func setupLayout() {
+        view.addSubview(catCardView)
         view.addSubview(aiCharacterView)
         view.addSubview(cardPickerView)
         
         NSLayoutConstraint.activate([
+            catCardView.widthAnchor.constraint(equalToConstant: 150),
+            catCardView.heightAnchor.constraint(equalToConstant: 150),
+            catCardView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            catCardView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            
             aiCharacterView.widthAnchor.constraint(equalToConstant: view.bounds.width * 0.3),
             aiCharacterView.heightAnchor.constraint(equalToConstant: view.bounds.width / 2),
             aiCharacterView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),

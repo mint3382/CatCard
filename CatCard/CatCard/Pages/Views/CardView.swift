@@ -93,7 +93,7 @@ extension CardView {
     
     private func zoomInCard() {
         UIView.animate(withDuration: 0.1) {
-            self.transform = .init(translationX: 0, y: -40)
+            self.transform = .init(translationX: 0, y: -40).rotated(by: 0.1)
         }
     }
     

@@ -13,6 +13,7 @@ protocol CardPickerViewModelProtocol {
     var didTapThirdActionButton: (() -> Void)? { get }
     var onUserCardItems: (([CardItem]) -> Void)? { get set }
     var onAICardItems: (([CardItem]) -> Void)? { get set }
+    var showAlert: ((_ imageString: String, _ title: String, _ message: String) -> Void)? { get set }
     
     func prepareGame()
     func resetGame(action: UIAlertAction)
@@ -28,6 +29,7 @@ final class CardPickerViewModel: CardPickerViewModelProtocol {
     
     var onUserCardItems: (([CardItem]) -> Void)?
     var onAICardItems: (([CardItem]) -> Void)?
+    var showAlert: ((_ imageName: String, _ title: String, _ message: String) -> Void)?
     
     init() {
         didTapFirstActionButton = {}
@@ -99,6 +101,49 @@ final class CardPickerViewModel: CardPickerViewModelProtocol {
     
     func explainGameRule() {
         //게임 규칙 설명 알럿
+    }
+    
+    //호랑이 게임 종료 알럿
+    private func biteByTigerGameOver() {
+        showAlert?("tiger\(Int.random(in: 1...2))",
+                   "이런... 호랑이에게 잡아먹혔습니다.",
+                   "")
+    }
+    
+    //고양이 입양 완료 알럿
+    private func notifyAdoptComplete() {
+        showAlert?("cat\(Int.random(in: 1...16))",
+        "입양 완료!",
+        "")
+    }
+    
+    //승리 알럿
+    private func winTheGame() {
+        showAlert?("cat\(Int.random(in: 1...16))",
+        "성공! 당신은 자격이 있다!",
+        "")
+    }
+    
+    //패배 알럿
+    private func loseTheGame() {
+        showAlert?("tiger\(Int.random(in: 1...2))",
+        "실패! 당신은 자격이 없다!",
+        "")
+    }
+    
+    
+    //게임 설명 알럿
+    private func discussionGameRule() {
+        showAlert?("",
+                   "게임 규칙",
+                    """
+                    과연 당신은 고양이 마스터로부터 허락을 받아낼 수 있을지?
+                    사랑, 밥, 캣타워, 시간, 돈 1장을 지불하거나
+                    사랑 10장을 지불하여
+                    고양이를 향한 당신의 사랑을 증명하세요!
+                    입양하실 때는 호랑이일지 아닐지 신중하게 확인하세요.
+                    잡아 먹힐 수도 있으니까요!
+                    """)
     }
 }
 

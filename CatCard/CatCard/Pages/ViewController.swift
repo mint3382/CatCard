@@ -102,9 +102,9 @@ extension ViewController {
             aiCharacterView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
             
             cardPickerView.widthAnchor.constraint(equalToConstant: view.bounds.width),
-            cardPickerView.heightAnchor.constraint(equalToConstant: view.bounds.height * 0.3),
+            cardPickerView.heightAnchor.constraint(equalToConstant: view.bounds.height * 0.2),
             cardPickerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            cardPickerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
+            cardPickerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50)
         ])
     }
 }

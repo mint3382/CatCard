@@ -53,7 +53,7 @@ final class CardView: UIView {
     // MARK: - Configure View
     
     private func configureStyle() {
-//        backgroundColor = .systemPink
+        backgroundColor = .white
         clipsToBounds = true
         layer.cornerRadius = 10
         layer.borderWidth = 2
@@ -72,10 +72,10 @@ final class CardView: UIView {
         addSubview(iconImageView)
         
         NSLayoutConstraint.activate([
-            iconImageView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
-            iconImageView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor),
-            iconImageView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
-            iconImageView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
+            iconImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            iconImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            iconImageView.widthAnchor.constraint(equalTo: layoutMarginsGuide.widthAnchor),
+            iconImageView.heightAnchor.constraint(equalTo: iconImageView.widthAnchor),
             
             widthAnchor.constraint(greaterThanOrEqualToConstant: 50),
             heightAnchor.constraint(greaterThanOrEqualToConstant: 100),

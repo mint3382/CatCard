@@ -50,6 +50,7 @@ final class CardPickerView: UIView {
         stack.alignment = .center
         stack.distribution = .fillEqually
         stack.spacing = 16
+        stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
     
@@ -59,6 +60,7 @@ final class CardPickerView: UIView {
         stack.alignment = .fill
         stack.distribution = .fillEqually
         stack.spacing = -16
+        stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
     
@@ -68,7 +70,7 @@ final class CardPickerView: UIView {
         stack.axis = .vertical
         stack.alignment = .fill
         stack.distribution = .fill
-//        stack.spacing = 16
+        stack.spacing = 16
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -93,13 +95,18 @@ final class CardPickerView: UIView {
     }
     
     private func setupLayout() {
-        addSubview(contentStack)
+//        addSubview(contentStack)
+        addSubview(actionButtonStack)
+        addSubview(cardStack)
         
         NSLayoutConstraint.activate([
-            contentStack.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
-            contentStack.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor),
-            contentStack.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
-            contentStack.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
+            actionButtonStack.widthAnchor.constraint(equalTo: layoutMarginsGuide.widthAnchor),
+            actionButtonStack.centerXAnchor.constraint(equalTo: centerXAnchor),
+            actionButtonStack.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
+            
+            cardStack.widthAnchor.constraint(equalTo: layoutMarginsGuide.widthAnchor),
+            cardStack.centerXAnchor.constraint(equalTo: centerXAnchor),
+            cardStack.topAnchor.constraint(equalTo: actionButtonStack.layoutMarginsGuide.bottomAnchor, constant: 50),
         ])
     }
 }

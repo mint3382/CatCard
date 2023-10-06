@@ -49,6 +49,15 @@ final class CardDummy {
         return allCount
     }
     
+    //자원카드 삭제하기
+    func removeResourceCard(resourceType: ResourceType) {
+        guard let count = resourceDummy[resourceType] else {
+            return
+        }
+        
+        resourceDummy[resourceType] = count - 1
+    }
+    
     //호랑이 카드 개수 확인
     func CountingTigerCard() -> Int {
         guard let tigerCard = catDummy[.tiger] else {
@@ -57,4 +66,5 @@ final class CardDummy {
         
         return tigerCard
     }
+    
 }

@@ -26,22 +26,26 @@ struct GameManager {
     
     //자원 카드 전달하기(더미 -> 플레이어)
     mutating private func playerGetResourceCard(_ playerType: PlayerType, count: Int) {
-        var player = checkPlayerType(playerType)
-        
-        for _ in 1...count {
-            let card = cardDummy.pickOneRandomResource()
-            guard let count = cardDummy.resourceDummy[card] else {
-                return
+        switch playerType {
+        case .user:
+            for _ in 1...count {
+                let card = cardDummy.pickOneRandomResource()
+                
+                cardDummy.removeResourceCard(resourceType: card)
+                user.addResourceCard(resourceType: card)
             }
-            
-            cardDummy.resourceDummy[card] = count - 1
-            player.addResourceCard(resourceType: card)
+        case .computer:
+            for _ in 1...count {
+                let card = cardDummy.pickOneRandomResource()
+                
+                cardDummy.removeResourceCard(resourceType: card)
+                computer.addResourceCard(resourceType: card)
+            }
         }
     }
     
     //고양이 카드 전달하기(더미 -> 플레이어)
     mutating private func playerGetCatCard(_ playerType: PlayerType) {
-        var player = checkPlayerType(playerType)
         let card = cardDummy.randomCatCard()
         guard let count = cardDummy.catDummy[card] else {
             return
@@ -49,7 +53,12 @@ struct GameManager {
         
         cardDummy.catDummy[card] = count - 1
         
-        player.addCatCard(catSpecies: card)
+        switch playerType {
+        case .user:
+            user.addCatCard(catSpecies: card)
+        case .computer:
+            computer.addCatCard(catSpecies: card)
+        }
     }
     
     //카드 개수 확인
@@ -80,27 +89,26 @@ struct GameManager {
     
     //고양이 입양 방법 (자원 카드 내고, 자원 카드 받고)
     mutating func changeCatCard(_ playerType: PlayerType) {
-        var player = checkPlayerType(playerType)
-        
-        if player.resourceCards.allSatisfy({ $0.value >= 1 }) {
-            player.removeResourceCard(cards: [.love: 1, .food: 1, .toy: 1, .time: 1, .money: 1])
-            playerGetResourceCard(playerType, count: 5)
-        } else if let loveCards = player.resourceCards[.love], loveCards >= 10 {
-            player.removeResourceCard(cards: [.love: 10])
-            playerGetResourceCard(playerType, count: 10)
+        switch playerType {
+        case .user:
+            if user.resourceCards.allSatisfy({ $0.value >= 1 }) {
+                user.removeResourceCard(cards: [.love: 1, .food: 1, .toy: 1, .time: 1, .money: 1])
+                playerGetResourceCard(playerType, count: 5)
+            } else if let loveCards = user.resourceCards[.love], loveCards >= 10 {
+                user.removeResourceCard(cards: [.love: 10])
+                playerGetResourceCard(playerType, count: 10)
+            }
+        case .computer:
+            if computer.resourceCards.allSatisfy({ $0.value >= 1 }) {
+                computer.removeResourceCard(cards: [.love: 1, .food: 1, .toy: 1, .time: 1, .money: 1])
+                playerGetResourceCard(playerType, count: 5)
+            } else if let loveCards = computer.resourceCards[.love], loveCards >= 10 {
+                computer.removeResourceCard(cards: [.love: 10])
+                playerGetResourceCard(playerType, count: 10)
+            }
         }
         
         playerGetCatCard(playerType)
-    }
-    
-    //플레이어 타입에 따라 전환하기
-    func checkPlayerType(_ playerType: PlayerType) -> Player {
-        switch playerType {
-        case .user:
-            return user
-        case .computer:
-            return computer
-        }
     }
     
     //호랑이인지 확인

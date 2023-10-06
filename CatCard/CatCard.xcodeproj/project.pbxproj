@@ -151,8 +151,8 @@
 			children = (
 				FFE646032ACFA7BE009406A1 /* Model */,
 				FFE646022ACFA797009406A1 /* Views */,
-				921137D92ACEB39700B31DCE /* ViewController.swift */,
 				92C43E802ACFA5BB00B4DADE /* CardPickerViewModel.swift */,
+				921137D92ACEB39700B31DCE /* ViewController.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";

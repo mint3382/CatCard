@@ -80,6 +80,9 @@ final class CardView: UIView {
             iconImageView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor),
             iconImageView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
             iconImageView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
+            
+            widthAnchor.constraint(greaterThanOrEqualToConstant: 50),
+            heightAnchor.constraint(greaterThanOrEqualToConstant: 100),
         ])
     }
 }

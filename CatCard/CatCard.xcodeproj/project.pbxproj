@@ -20,6 +20,15 @@
 		921137F22ACEE06300B31DCE /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921137F12ACEE06300B31DCE /* GameManager.swift */; };
 		921137F42ACEF0ED00B31DCE /* Computer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921137F32ACEF0ED00B31DCE /* Computer.swift */; };
 		921137F62ACEF10500B31DCE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921137F52ACEF10500B31DCE /* User.swift */; };
+		92C43E7B2ACFA59D00B4DADE /* CardActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43E7A2ACFA59D00B4DADE /* CardActionButton.swift */; };
+		92C43E7D2ACFA5AC00B4DADE /* CardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43E7C2ACFA5AC00B4DADE /* CardItem.swift */; };
+		92C43E7F2ACFA5B500B4DADE /* CatCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43E7E2ACFA5B500B4DADE /* CatCardView.swift */; };
+		92C43E812ACFA5BB00B4DADE /* CardPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43E802ACFA5BB00B4DADE /* CardPickerViewModel.swift */; };
+		92C43E832ACFA5C500B4DADE /* CardPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43E822ACFA5C500B4DADE /* CardPickerView.swift */; };
+		92C43E852ACFA5D000B4DADE /* CharacterLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43E842ACFA5D000B4DADE /* CharacterLabel.swift */; };
+		92C43E872ACFA5EE00B4DADE /* CharacterImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43E862ACFA5EE00B4DADE /* CharacterImageView.swift */; };
+		92C43E892ACFA5F500B4DADE /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43E882ACFA5F500B4DADE /* CharacterView.swift */; };
+		92C43E8B2ACFA62C00B4DADE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43E8A2ACFA62C00B4DADE /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +47,15 @@
 		921137F12ACEE06300B31DCE /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		921137F32ACEF0ED00B31DCE /* Computer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Computer.swift; sourceTree = "<group>"; };
 		921137F52ACEF10500B31DCE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		92C43E7A2ACFA59D00B4DADE /* CardActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardActionButton.swift; path = CatCard/CardActionButton.swift; sourceTree = SOURCE_ROOT; };
+		92C43E7C2ACFA5AC00B4DADE /* CardItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardItem.swift; sourceTree = "<group>"; };
+		92C43E7E2ACFA5B500B4DADE /* CatCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatCardView.swift; sourceTree = "<group>"; };
+		92C43E802ACFA5BB00B4DADE /* CardPickerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPickerViewModel.swift; sourceTree = "<group>"; };
+		92C43E822ACFA5C500B4DADE /* CardPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPickerView.swift; sourceTree = "<group>"; };
+		92C43E842ACFA5D000B4DADE /* CharacterLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterLabel.swift; sourceTree = "<group>"; };
+		92C43E862ACFA5EE00B4DADE /* CharacterImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterImageView.swift; sourceTree = "<group>"; };
+		92C43E882ACFA5F500B4DADE /* CharacterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
+		92C43E8A2ACFA62C00B4DADE /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +94,15 @@
 				921137D52ACEB39700B31DCE /* AppDelegate.swift */,
 				921137D72ACEB39700B31DCE /* SceneDelegate.swift */,
 				921137D92ACEB39700B31DCE /* ViewController.swift */,
+				92C43E7C2ACFA5AC00B4DADE /* CardItem.swift */,
+				92C43E7A2ACFA59D00B4DADE /* CardActionButton.swift */,
+				92C43E802ACFA5BB00B4DADE /* CardPickerViewModel.swift */,
+				92C43E822ACFA5C500B4DADE /* CardPickerView.swift */,
+				92C43E8A2ACFA62C00B4DADE /* CardView.swift */,
+				92C43E862ACFA5EE00B4DADE /* CharacterImageView.swift */,
+				92C43E882ACFA5F500B4DADE /* CharacterView.swift */,
+				92C43E7E2ACFA5B500B4DADE /* CatCardView.swift */,
+				92C43E842ACFA5D000B4DADE /* CharacterLabel.swift */,
 				921137DB2ACEB39700B31DCE /* Main.storyboard */,
 				921137DE2ACEB39800B31DCE /* Assets.xcassets */,
 				921137E02ACEB39800B31DCE /* LaunchScreen.storyboard */,
@@ -201,14 +228,23 @@
 			files = (
 				921137F02ACECFDD00B31DCE /* PlayerProtocol.swift in Sources */,
 				921137F22ACEE06300B31DCE /* GameManager.swift in Sources */,
+				92C43E7D2ACFA5AC00B4DADE /* CardItem.swift in Sources */,
 				921137DA2ACEB39700B31DCE /* ViewController.swift in Sources */,
+				92C43E832ACFA5C500B4DADE /* CardPickerView.swift in Sources */,
 				921137EA2ACEC0A500B31DCE /* CatSpecies.swift in Sources */,
+				92C43E892ACFA5F500B4DADE /* CharacterView.swift in Sources */,
+				92C43E8B2ACFA62C00B4DADE /* CardView.swift in Sources */,
 				921137EC2ACEC12A00B31DCE /* ResourceType.swift in Sources */,
+				92C43E812ACFA5BB00B4DADE /* CardPickerViewModel.swift in Sources */,
+				92C43E7B2ACFA59D00B4DADE /* CardActionButton.swift in Sources */,
 				921137EE2ACEC55B00B31DCE /* CardDummy.swift in Sources */,
 				921137F42ACEF0ED00B31DCE /* Computer.swift in Sources */,
 				921137D62ACEB39700B31DCE /* AppDelegate.swift in Sources */,
+				92C43E852ACFA5D000B4DADE /* CharacterLabel.swift in Sources */,
 				921137F62ACEF10500B31DCE /* User.swift in Sources */,
 				921137D82ACEB39700B31DCE /* SceneDelegate.swift in Sources */,
+				92C43E7F2ACFA5B500B4DADE /* CatCardView.swift in Sources */,
+				92C43E872ACFA5EE00B4DADE /* CharacterImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -48,10 +48,10 @@ class ViewController: UIViewController {
     private var gameManager = GameManager()
     private var selectedCards: [ResourceType: Int] = [.love: 0, .food: 0, .toy: 0, .time: 0, .money: 0]
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        
+//    }
     
     //게임 준비
     func prepareGame() {

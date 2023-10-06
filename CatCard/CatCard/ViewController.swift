@@ -26,6 +26,12 @@ class ViewController: UIViewController {
     }
     
     // MARK: - Views
+    
+    private let catCardView: CatCardView = {
+        let view = CatCardView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
 
     private let aiCharacterView: CharacterView = {
         let view = CharacterView()

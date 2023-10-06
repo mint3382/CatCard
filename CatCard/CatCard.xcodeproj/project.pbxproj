@@ -21,6 +21,7 @@
 		FF339B602ACF028700642F2E /* CharacterLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF339B5F2ACF028700642F2E /* CharacterLabel.swift */; };
 		FF339B642ACF06DD00642F2E /* CardPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF339B632ACF06DD00642F2E /* CardPickerViewModel.swift */; };
 		FF339B662ACF0C5800642F2E /* CardPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF339B652ACF0C5800642F2E /* CardPickerView.swift */; };
+		FF339B682ACF91BD00642F2E /* CatCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF339B672ACF91BD00642F2E /* CatCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		FF339B5F2ACF028700642F2E /* CharacterLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterLabel.swift; sourceTree = "<group>"; };
 		FF339B632ACF06DD00642F2E /* CardPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPickerViewModel.swift; sourceTree = "<group>"; };
 		FF339B652ACF0C5800642F2E /* CardPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPickerView.swift; sourceTree = "<group>"; };
+		FF339B672ACF91BD00642F2E /* CatCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				FF339B5B2ACEFA3000642F2E /* CharacterImageView.swift */,
 				FF339B5F2ACF028700642F2E /* CharacterLabel.swift */,
 				FF339B652ACF0C5800642F2E /* CardPickerView.swift */,
+				FF339B672ACF91BD00642F2E /* CatCardView.swift */,
 				FF339B632ACF06DD00642F2E /* CardPickerViewModel.swift */,
 				921137D92ACEB39700B31DCE /* ViewController.swift */,
 				921137DB2ACEB39700B31DCE /* Main.storyboard */,
@@ -163,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF339B642ACF06DD00642F2E /* CardPickerViewModel.swift in Sources */,
+				FF339B682ACF91BD00642F2E /* CatCardView.swift in Sources */,
 				921137DA2ACEB39700B31DCE /* ViewController.swift in Sources */,
 				FF339B502ACEC00B00642F2E /* CardActionButton.swift in Sources */,
 				FF339B602ACF028700642F2E /* CharacterLabel.swift in Sources */,

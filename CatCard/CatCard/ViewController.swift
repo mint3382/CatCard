@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     
     //섞기 버튼
     func tappedMixButton() {
-        gameManager.mixResourceCards(player: .user, cards: selectedCards)
+        gameManager.mixResourceCards(.user, cards: selectedCards)
         reactComputer()
     }
     
@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     }
     
     func userAdoptCat() {
-        gameManager.changeCatCard(player: .user)
+        gameManager.changeCatCard(.user)
         
         if gameManager.isBiteByTiger() {
             //게임 오버 알럿
@@ -53,10 +53,10 @@ class ViewController: UIViewController {
     //컴퓨터 기본 로직
     func reactComputer() {
         if gameManager.computer.canChangeCatCards() {
-            gameManager.changeCatCard(player: .computer)
+            gameManager.changeCatCard(.computer)
             checkTimingForFinish()
         } else {
-            gameManager.mixResourceCards(player: .computer, cards: gameManager.computer.randomCardsForChange())
+            gameManager.mixResourceCards(.computer, cards: gameManager.computer.randomCardsForChange())
         }
     }
     

@@ -11,21 +11,34 @@ final class CardPickerView: UIView {
     
     var onCardItems: (([CardItem]) -> Void)?
     
-    private let firstActionButton: CardActionButton = {
+    var firstActionButtonTapped: (() -> Void)?
+    var secondActionButtonTapped: (() -> Void)?
+    var thirdActionButtonTapped: (() -> Void)?
+    
+    private lazy var firstActionButton: CardActionButton = {
         let button = CardActionButton()
         button.setTitle("FIRST", for: .normal)
+        button.addAction(UIAction { _ in
+            self.firstActionButtonTapped?()
+        }, for: .touchUpInside)
         return button
     }()
     
-    private let secondActionButton: CardActionButton = {
+    private lazy var secondActionButton: CardActionButton = {
         let button = CardActionButton()
         button.setTitle("SECOND", for: .normal)
+        button.addAction(UIAction { _ in
+            self.secondActionButtonTapped?()
+        }, for: .touchUpInside)
         return button
     }()
     
-    private let thirdActionButton: CardActionButton = {
+    private lazy var thirdActionButton: CardActionButton = {
         let button = CardActionButton()
         button.setTitle("THIRD", for: .normal)
+        button.addAction(UIAction { _ in
+            self.thirdActionButtonTapped?()
+        }, for: .touchUpInside)
         return button
     }()
     

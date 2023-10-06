@@ -59,6 +59,18 @@ extension ViewController {
         viewModel.onUserCardItems = {
             self.cardPickerView.onCardItems?($0)
         }
+        
+        cardPickerView.firstActionButtonTapped = {
+            self.viewModel.didTapFirstActionButton?()
+        }
+        
+        cardPickerView.secondActionButtonTapped = {
+            self.viewModel.didTapSecondActionButton?()
+        }
+        
+        cardPickerView.thirdActionButtonTapped = {
+            self.viewModel.didTapThirdActionButton?()
+        }
     }
     
     private func setupLayout() {

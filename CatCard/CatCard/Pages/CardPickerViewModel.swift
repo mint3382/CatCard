@@ -15,6 +15,7 @@ protocol CardPickerViewModelProtocol {
     var onAICardItems: (([CardItem]) -> Void)? { get set }
     
     func prepareGame()
+    func resetGame(action: UIAlertAction)
 }
 
 final class CardPickerViewModel: CardPickerViewModelProtocol {
@@ -92,7 +93,13 @@ final class CardPickerViewModel: CardPickerViewModelProtocol {
     }
     
     //게임 다시 시작
-    func resetCardGame() {
+    func resetGame(action: UIAlertAction) {
         gameManager.resetGame()
     }
+    
+    func explainGameRule() {
+        //게임 규칙 설명 알럿
+    }
 }
+
+

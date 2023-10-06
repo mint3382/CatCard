@@ -27,6 +27,12 @@ class ViewController: UIViewController {
     
     // MARK: - Views
 
+    private let aiCharacterView: CharacterView = {
+        let view = CharacterView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     private let cardPickerView: CardPickerView = {
         let view = CardPickerView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -56,9 +62,15 @@ extension ViewController {
     }
     
     private func setupLayout() {
+        view.addSubview(aiCharacterView)
         view.addSubview(cardPickerView)
         
         NSLayoutConstraint.activate([
+            aiCharacterView.widthAnchor.constraint(equalToConstant: view.bounds.width * 0.3),
+            aiCharacterView.heightAnchor.constraint(equalToConstant: view.bounds.width / 2),
+            aiCharacterView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
+            aiCharacterView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
+            
             cardPickerView.widthAnchor.constraint(equalToConstant: view.bounds.width),
             cardPickerView.heightAnchor.constraint(equalToConstant: view.bounds.height * 0.3),
             cardPickerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
